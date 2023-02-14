@@ -17,4 +17,13 @@ class Cliente extends Model
         'Telefono',
         'Observaciones',
     ];
+
+    public function servicios($id) {
+
+        $pivot = Servicio_cliente::where('cliente_id',$id)->pluck('servicio_id');
+        return Servicio::WhereIn('id',$pivot)->get();
+        // return $this->belongsToMany(Servicio::class,'servicio_clientes');
+    }
+
+
 }

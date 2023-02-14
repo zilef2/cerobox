@@ -16,12 +16,12 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        \App\Models\User::factory()->create([ 'name' => 'Test User', 'email' => 'test@example.com', 'password' => bcrypt('1152194566') ]);
+        \App\Models\TipoServicio::Create([ 'Nombre' => 'Básico']);
+        \App\Models\TipoServicio::Create([ 'Nombre' => 'Avanzado']);
         // $this->call(ClienteSeeder::class);
         \App\Models\Cliente::factory(25)->create();
-
+        \App\Models\Servicio::factory(7)->create();
+        \App\Models\Servicio_cliente::Create([ 'cliente_id' => '1', 'servicio_id' => '1' ]);
     }
 }

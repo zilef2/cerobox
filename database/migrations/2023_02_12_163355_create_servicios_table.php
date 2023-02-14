@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->string('Nombre');
-            $table->string('Imagen');
+            $table->string('Imagen')->nullable();
             $table->string('Fecha_inicio');
             $table->string('Fecha_fin');
             $table->string('Observaciones');
